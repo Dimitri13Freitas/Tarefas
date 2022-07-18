@@ -43,16 +43,18 @@ body {
   border:none;
   margin:10px 0;
 }
-.header a {
+.header button {
   display: inline-block;
+  font-size: 1.06rem;
   color:var(--cor-p1);
   background-color: var(--cor-p2);
   padding:10px;
   border:2px solid var(--cor-p2);
   border-radius:5px;
   transition:0.3s;
+  cursor: pointer;
 }
-.header a:hover {
+.header button:hover {
   color:var(--cor-p3);
   background-color: var(--cor-p1);
 }
@@ -70,21 +72,37 @@ body {
 }
 .lista li p {
   font-size: 0.95rem;
+  max-width: 370px;
 }
 .lista li svg {
   padding:5px;
   transition: 0.2s;
 }
 .lista li svg:hover {
-  background-color: #2c2c2c;
+  background-color: var(--cor-p5);
   border-radius:3px;
+  cursor: pointer;
 }
 .lista li svg path {
   transition: 0.2s;
 }
 .lista li svg:hover path {
-  fill: #0CF25D;
+  fill: var(--cor-p2);
 } 
+.lista li button {
+  background: none;
+  border:none;
+  height: 26px;
+}
+
+
+
+
+
+
+
+
+
 /* .lista li:hover {
   border-left: 3px outset var(--cor-p2);
 }*/
