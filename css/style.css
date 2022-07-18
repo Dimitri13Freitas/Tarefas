@@ -1,0 +1,90 @@
+/* Reset */
+* {
+  margin:0;
+  padding:0;
+  text-decoration: none;
+  list-style: none;
+}
+input:focus {
+  outline: none;
+}
+/* Cores */
+:root {
+  --cor-p1:#141414;
+  --cor-p2:#0CF25D;
+  --cor-p3:#f7f7f7;
+  --cor-p4:#212121;
+  --cor-p5:#2c2c2c;
+}
+/* Geral */
+body {
+  font-family: 'Inter',Arial, Helvetica, sans-serif;
+  background-color: var(--cor-p1);
+}
+
+/* Header */
+.container {
+  margin: 35px auto 0 auto;
+  max-width:424px;
+  border-radius:5px;
+  border: 2px solid var(--cor-p2);
+  padding:30px;
+}
+.header h1{
+  color:var(--cor-p3);
+}
+.header input {
+  width:300px;
+  background-color: var(--cor-p4);
+  padding:12px 16px 12px 8px;
+  font-size: 1.15rem;
+  color:var(--cor-p3);
+  border-radius:5px;
+  border:none;
+  margin:10px 0;
+}
+.header a {
+  display: inline-block;
+  color:var(--cor-p1);
+  background-color: var(--cor-p2);
+  padding:10px;
+  border:2px solid var(--cor-p2);
+  border-radius:5px;
+  transition:0.3s;
+}
+.header a:hover {
+  color:var(--cor-p3);
+  background-color: var(--cor-p1);
+}
+
+/* Lista */
+.lista li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--cor-p4);
+  border-radius:5px;
+  padding:16px 10px;
+  color:var(--cor-p3);
+  margin:5px 0;
+}
+.lista li p {
+  font-size: 0.95rem;
+}
+.lista li svg {
+  padding:5px;
+  transition: 0.2s;
+}
+.lista li svg:hover {
+  background-color: #2c2c2c;
+  border-radius:3px;
+}
+.lista li svg path {
+  transition: 0.2s;
+}
+.lista li svg:hover path {
+  fill: #0CF25D;
+} 
+/* .lista li:hover {
+  border-left: 3px outset var(--cor-p2);
+}*/
