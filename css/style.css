@@ -73,8 +73,45 @@ body {
 .lista li p {
   font-size: 0.95rem;
   max-width: 370px;
+  word-break: break-all;
 }
-.lista li svg {
+.lista li button {
+  background: none;
+  border:none;
+  height: 16px;
+  width: 16px;
+  padding:13px;
+  position: relative;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.lista li button:hover {
+  background-color: var(--cor-p5);
+}
+.lista li button:hover::after {
+  transition: 0.3s;
+  background-image: url("../img/shapeV.svg");
+}
+.lista li button:after {
+  content: '';
+  background-image: url("../img/shape.svg");
+  position: absolute;
+  width:16px;
+  height:16px;
+  margin-right:10px;
+  top:20%;
+  left:20%;
+}
+
+
+
+
+
+
+
+
+/* .lista li svg {
   padding:5px;
   transition: 0.2s;
 }
@@ -88,20 +125,7 @@ body {
 }
 .lista li svg:hover path {
   fill: var(--cor-p2);
-} 
-.lista li button {
-  background: none;
-  border:none;
-  height: 26px;
-}
-
-
-
-
-
-
-
-
+}  */
 
 /* .lista li:hover {
   border-left: 3px outset var(--cor-p2);
