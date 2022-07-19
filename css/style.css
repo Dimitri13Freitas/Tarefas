@@ -29,6 +29,7 @@ body {
   border-radius:5px;
   border: 2px solid var(--cor-p2);
   padding:30px;
+  transition:0.3s;
 }
 .header h1{
   color:var(--cor-p3);
@@ -104,29 +105,29 @@ body {
   left:20%;
 }
 
-
-
-
-
-
-
-
-/* .lista li svg {
-  padding:5px;
-  transition: 0.2s;
+/* Js */
+.js .lista li{
+  animation: addSlideDown .5s forwards;
 }
-.lista li svg:hover {
-  background-color: var(--cor-p5);
-  border-radius:3px;
-  cursor: pointer;
+.js .lista li.ativo{
+  animation: rmSlideDown .5s forwards;
 }
-.lista li svg path {
-  transition: 0.2s;
-}
-.lista li svg:hover path {
-  fill: var(--cor-p2);
-}  */
 
-/* .lista li:hover {
-  border-left: 3px outset var(--cor-p2);
-}*/
+/* Animações */
+@keyframes addSlideDown {
+  from {
+    opacity:0;
+    transform: translate3d(0 , -20px, 0);
+  } to {
+    opacity:1;
+  }
+}
+@keyframes rmSlideDown {
+  from {
+    transform: translate3d(0 , 0, 0);
+    opacity:1;
+  } to {
+    transform: translate3d(0 , -20px, 0);
+    opacity:0;
+  }
+}
