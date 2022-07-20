@@ -8,6 +8,7 @@
 input:focus {
   outline: none;
 }
+
 /* Cores */
 :root {
   --cor-p1:#141414;
@@ -16,6 +17,7 @@ input:focus {
   --cor-p4:#212121;
   --cor-p5:#2c2c2c;
 }
+
 /* Geral */
 body {
   font-family: 'Inter',Arial, Helvetica, sans-serif;
@@ -24,12 +26,11 @@ body {
 
 /* Header */
 .container {
-  margin: 35px auto 0 auto;
+  margin: 5px auto 0 auto;
   max-width:424px;
   border-radius:5px;
   border: 2px solid var(--cor-p2);
   padding:30px;
-  transition:0.3s;
 }
 .header h1{
   color:var(--cor-p3);
@@ -105,13 +106,69 @@ body {
   left:20%;
 }
 
+.btnContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* btn */
+
+.js .cMode {
+  display: block;
+  width:50px;
+  height:24px;
+  background-color: var(--cor-p5);
+  border-radius:15px;
+  border:solid var(--cor-p5) 1px;
+  margin:30px 40px 0 0;
+  position:relative;
+}
+.js .cMode::after {
+  content: '';
+  position: absolute;
+  width:20px;
+  height:20px;
+  border-radius:15px;
+  background-color: var(--cor-p4);
+  margin-top:2px;
+  margin-left:2px;
+  transition:0.3s;
+}
+.js .cMode.liga::after {
+  margin-left:27px;
+}
+
+
+
+
+
 /* Js */
 .js .lista li{
   animation: addSlideDown .5s forwards;
 }
-.js .lista li.ativo{
+.js .lista li.anima{
   animation: rmSlideDown .5s forwards;
 }
+
+.js body.changeMode {
+  background-color: #f7f7f7;
+}
+
+
+
+
+
+/* body, .container, .header h1, .header input, .header button, .lista li button:hover,  */
+
+
+
+
+
+
+
+
+
+
 
 /* Animações */
 @keyframes addSlideDown {

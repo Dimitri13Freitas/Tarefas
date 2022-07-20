@@ -4,7 +4,6 @@ const inputTarefas = document.querySelector('#inputTarefas');
 const jsLista = document.querySelector('.jsLista');
 
 
-
 inputTarefas.addEventListener('keypress', (event) => {
   if(event.keyCode === 13) {
     addTarefa();
@@ -39,7 +38,7 @@ function removeTarefa() {
   
   removeTarefa.forEach((btn, index) => {
     btn.addEventListener('click', () => {
-      itemTarefa[index].classList.add('ativo');
+      itemTarefa[index].classList.add('anima');
       setTimeout(() => {
         itemTarefa[index].remove();
       }, 300);
@@ -49,6 +48,19 @@ function removeTarefa() {
 removeTarefa();
 
 
+// Modo Escuro e Claro
+// const body = document.querySelector('body');
+// const input = body.querySelector('input');
+// const h1 = body.querySelector('h1');
+// const container = body.querySelector('div');
+
+const btnChangetema = document.querySelector('.cMode');
+// console.log(btnChangetema);
+
+btnChangetema.addEventListener('click',() => {
+  btnChangetema.classList.toggle('liga');
+
+});
 
 
 
