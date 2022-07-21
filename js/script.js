@@ -49,18 +49,14 @@ removeTarefa();
 
 
 // Modo Escuro e Claro
-// const body = document.querySelector('body');
-// const input = body.querySelector('input');
-// const h1 = body.querySelector('h1');
-// const container = body.querySelector('div');
-
-const btnChangetema = document.querySelector('.cMode');
-// console.log(btnChangetema);
+const btnChangetema = document.querySelector('#mode');
 
 btnChangetema.addEventListener('click',() => {
   btnChangetema.classList.toggle('liga');
-
+  document.querySelector('html').classList.toggle('changeMode')
 });
+
+// Adiciona marcador
 
 
 

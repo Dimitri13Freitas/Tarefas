@@ -17,6 +17,14 @@ input:focus {
   --cor-p4:#212121;
   --cor-p5:#2c2c2c;
 }
+.changeMode:root {
+  --cor-p1:#f7f7f7;
+  --cor-p2:#0CF25D;
+  --cor-p3:#141414;
+  --cor-p4:#bfbfbf;
+  --cor-p5:#949494;
+}
+
 
 /* Geral */
 body {
@@ -70,7 +78,7 @@ body {
   border-radius:5px;
   padding:16px 10px;
   color:var(--cor-p3);
-  margin:5px 0;
+  margin:6px 0;
 }
 .lista li p {
   font-size: 0.95rem;
@@ -106,41 +114,37 @@ body {
   left:20%;
 }
 
+/* Botão de troca de tema */
 .btnContainer {
   display: flex;
   justify-content: flex-end;
 }
 
 /* btn */
-
-.js .cMode {
+.changeModeBtn {
   display: block;
   width:50px;
   height:24px;
-  background-color: var(--cor-p5);
+  background-color: var(--cor-p4);
   border-radius:15px;
   border:solid var(--cor-p5) 1px;
-  margin:30px 40px 0 0;
+  margin:20px 65px 0 0;
   position:relative;
 }
-.js .cMode::after {
+.changeModeBtn::after {
   content: '';
   position: absolute;
   width:20px;
   height:20px;
   border-radius:15px;
-  background-color: var(--cor-p4);
+  background-color: var(--cor-p5);
   margin-top:2px;
   margin-left:2px;
   transition:0.3s;
 }
-.js .cMode.liga::after {
-  margin-left:27px;
+.changeModeBtn.liga::after {
+  margin-left:28px;
 }
-
-
-
-
 
 /* Js */
 .js .lista li{
@@ -150,27 +154,7 @@ body {
   animation: rmSlideDown .5s forwards;
 }
 
-.js body.changeMode {
-  background-color: #f7f7f7;
-}
-
-
-
-
-
-/* body, .container, .header h1, .header input, .header button, .lista li button:hover,  */
-
-
-
-
-
-
-
-
-
-
-
-/* Animações */
+/* Animações e Transições */
 @keyframes addSlideDown {
   from {
     opacity:0;
