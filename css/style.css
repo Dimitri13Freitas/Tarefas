@@ -177,3 +177,13 @@ body {
     opacity:0;
   }
 }
+
+/* Responsivo */
+@media (max-width:500px) {
+  .header input {
+    width:250px;
+  }
+  .changeModeBtn {
+  margin:20px;
+  }
+}
