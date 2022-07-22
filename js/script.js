@@ -19,6 +19,7 @@ function addTarefas() {
 
   function addTarefa() {
     let tarefaItem = document.createElement('li');
+    
     // Marcador aos adicionados
     tarefaItem.addEventListener('click', () => {
       tarefaItem.classList.toggle('mark');
@@ -78,17 +79,6 @@ function changeMode() {
   });
 };
 changeMode();
-
-
-
-
-
-
-
-
-
-
-
 
 
 window.onload = () => {
