@@ -3,23 +3,26 @@ const btnAddTarefa = document.querySelector('#btnAddTarefa');
 const inputTarefas = document.querySelector('#inputTarefas');
 const jsLista = document.querySelector('.jsLista');
 
-function addTarefa() {
+
+function addTarefas() {
   inputTarefas.addEventListener('keypress', (event) => {
     if(event.keyCode === 13) {
       addTarefa();
       removeTarefa();
-      addMark();
     };
   });
   
   btnAddTarefa.addEventListener('click', () => {
     addTarefa();
     removeTarefa();
-    addMark();
   });
-  
+
   function addTarefa() {
     let tarefaItem = document.createElement('li');
+    // Marcador aos adicionados
+    tarefaItem.addEventListener('click', () => {
+      tarefaItem.classList.toggle('mark');
+    });
     jsLista.appendChild(tarefaItem);
   
     let tarefaNome = document.createElement('p');
@@ -32,19 +35,20 @@ function addTarefa() {
     inputTarefas.value = '';
   };
 };
-addTarefa();
+addTarefas();
 
 
-// Adiciona marcador
+// Adiciona marcador aos exemplos
 function addMark() {
   const marcador = jsLista.querySelectorAll('li');
-  
+
   marcador.forEach((item) => {
     item.addEventListener('click', () => {
       item.classList.toggle('mark');
     });
   });
 };
+addMark();
 
 
 // Remove Tarefa
@@ -66,10 +70,10 @@ removeTarefa();
 
 // Modo Escuro e Claro
 function changeMode() {
-  const btnChangetema = document.querySelector('#mode');
+  const btnChangeTema = document.querySelector('#mode');
   
-  btnChangetema.addEventListener('click',() => {
-    btnChangetema.classList.toggle('liga');
+  btnChangeTema.addEventListener('click',() => {
+    btnChangeTema.classList.toggle('liga');
     document.documentElement.classList.toggle('changeMode');
   });
 };

@@ -52,6 +52,7 @@ body {
   border-radius:5px;
   border:none;
   margin:10px 0;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
 .header button {
   display: inline-block;
@@ -79,6 +80,7 @@ body {
   padding:16px 10px;
   color:var(--cor-p3);
   margin:6px 0;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
 .lista li p {
   font-size: 0.95rem;
