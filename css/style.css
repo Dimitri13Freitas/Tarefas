@@ -44,7 +44,9 @@ body {
   color:var(--cor-p3);
 }
 .header input {
-  width:300px;
+  display: block;
+  max-width:300px;
+  width: 100%;
   background-color: var(--cor-p4);
   padding:12px 16px 12px 8px;
   font-size: 1.15rem;
@@ -55,7 +57,7 @@ body {
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
 .header button {
-  display: inline-block;
+  display: block;
   font-size: 1.06rem;
   color:var(--cor-p1);
   background-color: var(--cor-p2);
@@ -68,6 +70,11 @@ body {
 .header button:hover {
   color:var(--cor-p3);
   background-color: var(--cor-p1);
+}
+.responsivoAddTarefas {
+  display: flex;
+  align-items: center;
+  gap:5px;
 }
 
 /* Lista */
@@ -180,10 +187,13 @@ body {
 
 /* Responsivo */
 @media (max-width:500px) {
-  .header input {
-    width:250px;
+  body {
+    padding:25px;
+  }
+  .btnContainer {
+    justify-content: right;
   }
   .changeModeBtn {
-  margin:20px;
+  margin:0 20px 20px 0;
   }
 }
