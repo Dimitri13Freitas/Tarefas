@@ -110,7 +110,7 @@ body {
 }
 .lista li button:hover::after {
   transition: 0.3s;
-  background-image: url("../img/shapeV.svg");
+  background-image: url("../img/shapeHover.svg");
 }
 .lista li button:after {
   content: '';
