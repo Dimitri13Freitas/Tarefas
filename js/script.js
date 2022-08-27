@@ -3,6 +3,11 @@ const btnAddTarefa = document.querySelector('#btnAddTarefa');
 const inputTarefas = document.querySelector('#inputTarefas');
 const jsLista = document.querySelector('.jsLista');
 
+// Otimização de código
+function tornaFilho(pai, filho) {
+  const elemento = document.createElement(filho);
+  return pai.appendChild(elemento);
+};
 
 function addTarefas() {
   inputTarefas.addEventListener('keypress', (event) => {
@@ -18,21 +23,18 @@ function addTarefas() {
   });
 
   function addTarefa() {
-    let tarefaItem = document.createElement('li');
+    const li = tornaFilho(jsLista, 'li');
     
+    const p  = tornaFilho(li, 'p');
+    p.innerHTML = inputTarefas.value;
+    
+    const button = tornaFilho(li,'button');
+
     // Marcador aos adicionados
-    tarefaItem.addEventListener('click', () => {
-      tarefaItem.classList.toggle('mark');
+    li.addEventListener('click', () => {
+      li.classList.toggle('mark');
     });
-    jsLista.appendChild(tarefaItem);
-  
-    let tarefaNome = document.createElement('p');
-    tarefaItem.appendChild(tarefaNome);
-    tarefaNome.innerHTML = inputTarefas.value;
-  
-    let button = document.createElement('button');
-    tarefaItem.appendChild(button);
-    
+
     inputTarefas.value = '';
   };
 };
