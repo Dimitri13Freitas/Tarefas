@@ -108,19 +108,40 @@ body {
 .lista li button:hover {
   background-color: var(--cor-p5);
 }
-.lista li button:hover::after {
+.lista li .btnExcluir:hover::after {
   transition: 0.3s;
-  background-image: url("../img/shapeHover.svg");
+  background-image: url("../img/excluirHover.svg");
 }
-.lista li button:after {
+.lista li .btnExcluir:after {
   content: '';
-  background-image: url("../img/shape.svg");
+  background-image: url("../img/excluir.svg");
   position: absolute;
   width:16px;
   height:16px;
   margin-right:10px;
   top:20%;
   left:20%;
+}
+.lista li .btnDesc:hover::after {
+  transition: 0.3s;
+  background-image: url("../img/descHover.svg");
+}
+.lista li .btnDesc:after {
+  content: '';
+  background-image: url("../img/desc.svg");
+  position: absolute;
+  width:18px;
+  height:18px;
+  margin-right:10px;
+  top:14%;
+  left:20%;
+}
+
+/* Constainer dos botões de cada tarefa */
+.btnsLista {
+  display: flex;
+  align-items: center;
+  gap:6px;
 }
 
 /* Botão de troca de tema */

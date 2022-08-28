@@ -9,6 +9,7 @@ function tornaFilho(pai, filho) {
   return pai.appendChild(elemento);
 };
 
+// Adiciona tarefas
 function addTarefas() {
   inputTarefas.addEventListener('keypress', (event) => {
     if(event.keyCode === 13) {
@@ -28,7 +29,10 @@ function addTarefas() {
     const p  = tornaFilho(li, 'p');
     p.innerHTML = inputTarefas.value;
     
-    const button = tornaFilho(li,'button');
+    const btnContainer = tornaFilho(li, 'div');
+    btnContainer.classList.add('btnsLista');
+    const btnDescricao = tornaFilho(btnContainer,'button').classList.add('btnDesc');
+    const btnExcluir = tornaFilho(btnContainer,'button').classList.add('btnExcluir');
 
     // Marcador aos adicionados
     li.addEventListener('click', () => {
@@ -56,7 +60,7 @@ addMark();
 
 // Remove Tarefa
 function removeTarefa() {
-  const removeTarefa = jsLista.querySelectorAll('li button');
+  const removeTarefa = jsLista.querySelectorAll('.btnExcluir');
   const itemTarefa = jsLista.querySelectorAll('li');
   
   removeTarefa.forEach((btn, index) => {
