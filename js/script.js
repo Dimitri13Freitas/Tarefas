@@ -66,7 +66,6 @@ function removeTarefa() {
   
   removeTarefa.forEach((btn, index) => {
     btn.addEventListener('click', (btn) => {
-      // Eu escrevi a linha 69 em 3 segundos e resolveu mais de 3 horas de tentativas falhas de resolver um problema :D é muito bom estudar programação as vezes kkk
       btn.stopPropagation();
       itemTarefa[index].classList.add('anima');
       setTimeout(() => {
@@ -80,15 +79,36 @@ removeTarefa();
 // Edita Tarefa
 function editaTarefa() {
   const btnEdita = document.querySelectorAll('.btnDesc');
-  const li = jsLista.querySelectorAll('li');
   const p = jsLista.querySelectorAll('p');
+  const modalContainer = document.querySelector('.modalContainer')
+  const modalInput = document.querySelector('.modal input')
 
-  btnEdita.forEach((e, index) => {
+  modalContainer.addEventListener('click', (e) => {
+    e.stopPropagation();
+    modalContainer.classList.remove('ativo');
+  });
+  modalContainer.firstElementChild.addEventListener('click', (e) => {
+    e.stopPropagation();
+  });
+
+  btnEdita.forEach((e , index) => {
     e.addEventListener('click', (btn) => {
       btn.stopPropagation();
-      p[index].innerText = '';
+
+      // pega o valor da tarefa digitada e adiciona ao input para edição
+      modalInput.value = p[index].innerText;
+
+      modalContainer.classList.add('ativo');
     });
   });
+  
+  
+  // btnEdita.forEach((e, index) => {
+    //   e.addEventListener('click', (btn) => {
+    // p[index].innerText = '';
+    //     btn.stopPropagation();
+  //   });
+  // });
 };
 editaTarefa();
 
