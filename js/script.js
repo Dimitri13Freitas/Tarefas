@@ -38,6 +38,7 @@ function addTarefas() {
     li.addEventListener('click', () => {
       li.classList.toggle('mark');
     });
+    editaTarefa();
 
     inputTarefas.value = '';
   };
@@ -64,9 +65,9 @@ function removeTarefa() {
   const itemTarefa = jsLista.querySelectorAll('li');
   
   removeTarefa.forEach((btn, index) => {
-    btn.addEventListener('click', (e) => {
+    btn.addEventListener('click', (btn) => {
       // Eu escrevi a linha 69 em 3 segundos e resolveu mais de 3 horas de tentativas falhas de resolver um problema :D é muito bom estudar programação as vezes kkk
-      e.stopPropagation();
+      btn.stopPropagation();
       itemTarefa[index].classList.add('anima');
       setTimeout(() => {
         itemTarefa[index].remove();
@@ -75,6 +76,21 @@ function removeTarefa() {
   });
 };
 removeTarefa();
+
+// Edita Tarefa
+function editaTarefa() {
+  const btnEdita = document.querySelectorAll('.btnDesc');
+  const li = jsLista.querySelectorAll('li');
+  const p = jsLista.querySelectorAll('p');
+
+  btnEdita.forEach((e, index) => {
+    e.addEventListener('click', (btn) => {
+      btn.stopPropagation();
+      p[index].innerText = '';
+    });
+  });
+};
+editaTarefa();
 
 
 // Modo Escuro e Claro
