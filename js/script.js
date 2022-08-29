@@ -64,7 +64,9 @@ function removeTarefa() {
   const itemTarefa = jsLista.querySelectorAll('li');
   
   removeTarefa.forEach((btn, index) => {
-    btn.addEventListener('click', () => {
+    btn.addEventListener('click', (e) => {
+      // Eu escrevi a linha 69 em 3 segundos e resolveu mais de 3 horas de tentativas falhas de resolver um problema :D é muito bom estudar programação as vezes kkk
+      e.stopPropagation();
       itemTarefa[index].classList.add('anima');
       setTimeout(() => {
         itemTarefa[index].remove();
