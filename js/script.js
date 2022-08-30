@@ -80,8 +80,12 @@ removeTarefa();
 function editaTarefa() {
   const btnEdita = document.querySelectorAll('.btnDesc');
   const p = jsLista.querySelectorAll('p');
-  const modalContainer = document.querySelector('.modalContainer')
-  const modalInput = document.querySelector('.modal input')
+  const modalButton = document.querySelector('.modal button');
+  const modalInput = document.querySelector('.modal input');
+  const modalContainer = document.querySelector('.modalContainer');
+
+  // console.log(btnEdita)
+  // console.log(p)
 
   modalContainer.addEventListener('click', (e) => {
     e.stopPropagation();
@@ -95,20 +99,20 @@ function editaTarefa() {
     e.addEventListener('click', (btn) => {
       btn.stopPropagation();
 
-      // pega o valor da tarefa digitada e adiciona ao input para edição
+      
+      modalContainer.classList.add('ativo');
+      
       modalInput.value = p[index].innerText;
 
-      modalContainer.classList.add('ativo');
+      modalButton.addEventListener('click', (e) => {
+        e.stopPropagation();
+        p[index].innerText = modalInput.value;
+        console.log(index);
+      });
+
+
     });
   });
-  
-  
-  // btnEdita.forEach((e, index) => {
-    //   e.addEventListener('click', (btn) => {
-    // p[index].innerText = '';
-    //     btn.stopPropagation();
-  //   });
-  // });
 };
 editaTarefa();
 
