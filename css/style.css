@@ -142,7 +142,7 @@ body {
   height:100vh;
   position:fixed;
   top:0;
-  display: none;
+  /* display: none; */
 }
 .modalContainer.ativo{
   display: block !important;

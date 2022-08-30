@@ -78,44 +78,29 @@ removeTarefa();
 
 // Edita Tarefa
 function editaTarefa() {
+
   const btnEdita = document.querySelectorAll('.btnDesc');
-  const p = jsLista.querySelectorAll('p');
-  const modalButton = document.querySelector('.modal button');
-  const modalInput = document.querySelector('.modal input');
-  const modalContainer = document.querySelector('.modalContainer');
-
-  // console.log(btnEdita)
-  // console.log(p)
-
-  modalContainer.addEventListener('click', (e) => {
-    e.stopPropagation();
-    modalContainer.classList.remove('ativo');
-  });
-  modalContainer.firstElementChild.addEventListener('click', (e) => {
-    e.stopPropagation();
-  });
 
   btnEdita.forEach((e , index) => {
     e.addEventListener('click', (btn) => {
+      const p = jsLista.querySelectorAll('p');
       btn.stopPropagation();
+      modal();
+      const modalInput = document.querySelector('.modal input');
 
-      
-      modalContainer.classList.add('ativo');
-      
       modalInput.value = p[index].innerText;
 
+      const modalButton = document.querySelector('.modal button');
       modalButton.addEventListener('click', (e) => {
         e.stopPropagation();
         p[index].innerText = modalInput.value;
         console.log(index);
       });
 
-
     });
   });
 };
 editaTarefa();
-
 
 // Modo Escuro e Claro
 function changeMode() {
@@ -131,4 +116,30 @@ changeMode();
 
 window.onload = () => {
   inputTarefas.focus();
+};
+
+function modal() {
+  const foraContainer = document.querySelector('body');
+  const modalContainer = tornaFilho(foraContainer, 'div');
+  modalContainer.classList.add('modalContainer');
+  const modal = tornaFilho(modalContainer, 'div');
+  modal.classList.add('modal');
+  const p = tornaFilho(modal, 'p');
+  p.innerText = 'Edite sua tarefa';
+  const div = tornaFilho(modal, 'div');
+  const input = tornaFilho(div, 'input');
+  const button = tornaFilho(div, 'button');
+  button.classList.add('btn');
+  button.innerText = 'Salvar';
+  modalContainer.addEventListener('click', (e) => {
+    e.stopPropagation();
+    modalContainer.remove();
+  });
+  modalContainer.firstElementChild.addEventListener('click', (e) => {
+      e.stopPropagation();
+    });
+  button.addEventListener('click', (e) => {
+    e.stopPropagation();
+    modalContainer.remove();
+  });
 };
