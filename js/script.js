@@ -78,25 +78,27 @@ removeTarefa();
 
 // Edita Tarefa
 function editaTarefa() {
-
   const btnEdita = document.querySelectorAll('.btnDesc');
 
   btnEdita.forEach((e , index) => {
     e.addEventListener('click', (btn) => {
-      const p = jsLista.querySelectorAll('p');
       btn.stopPropagation();
       modal();
-      const modalInput = document.querySelector('.modal input');
 
+      const p = jsLista.querySelectorAll('p');
+      const modalInput = document.querySelector('.modal input');
       modalInput.value = p[index].innerText;
 
       const modalButton = document.querySelector('.modal button');
       modalButton.addEventListener('click', (e) => {
         e.stopPropagation();
         p[index].innerText = modalInput.value;
-        console.log(index);
       });
 
+      const modalContainer = document.querySelectorAll('.modalContainer');
+      if(modalContainer.length >= 2) {
+        modalContainer[modalContainer.length - 1].remove();
+      };
     });
   });
 };
@@ -112,7 +114,6 @@ function changeMode() {
   });
 };
 changeMode();
-
 
 window.onload = () => {
   inputTarefas.focus();
@@ -131,13 +132,16 @@ function modal() {
   const button = tornaFilho(div, 'button');
   button.classList.add('btn');
   button.innerText = 'Salvar';
+
   modalContainer.addEventListener('click', (e) => {
     e.stopPropagation();
     modalContainer.remove();
   });
+
   modalContainer.firstElementChild.addEventListener('click', (e) => {
       e.stopPropagation();
     });
+
   button.addEventListener('click', (e) => {
     e.stopPropagation();
     modalContainer.remove();
