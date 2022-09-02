@@ -34,7 +34,7 @@ function addTarefas() {
     const btnDescricao = tornaFilho(btnContainer,'button').classList.add('btnDesc');
     const btnExcluir = tornaFilho(btnContainer,'button').classList.add('btnExcluir');
 
-    // Marcador aos adicionados
+    // Marcador aos adicionadosw
     li.addEventListener('click', () => {
       li.classList.toggle('mark');
     });
@@ -85,9 +85,15 @@ function editaTarefa() {
       btn.stopPropagation();
       modal();
 
+      const modalContainer = document.querySelectorAll('.modalContainer');
+      if(modalContainer.length >= 2) {
+        modalContainer[modalContainer.length - 1].remove();
+      };
+
       const p = jsLista.querySelectorAll('p');
       const modalInput = document.querySelector('.modal input');
       modalInput.value = p[index].innerText;
+      modalInput.focus();
 
       const modalButton = document.querySelector('.modal button');
       modalButton.addEventListener('click', (e) => {
@@ -95,10 +101,14 @@ function editaTarefa() {
         p[index].innerText = modalInput.value;
       });
 
-      const modalContainer = document.querySelectorAll('.modalContainer');
-      if(modalContainer.length >= 2) {
-        modalContainer[modalContainer.length - 1].remove();
-      };
+      
+      // Adiciona Tarefa pressionando a tecla enter
+      modalInput.addEventListener('keypress', (e) => {
+        if(e.keyCode === 13) {
+          p[index].innerText = modalInput.value;
+        }
+      });
+
     });
   });
 };
@@ -133,6 +143,7 @@ function modal() {
   button.classList.add('btn');
   button.innerText = 'Salvar';
 
+  // Ao clicar fora do Modal Fecha e cancela a edição
   modalContainer.addEventListener('click', (e) => {
     e.stopPropagation();
     modalContainer.remove();
@@ -145,5 +156,11 @@ function modal() {
   button.addEventListener('click', (e) => {
     e.stopPropagation();
     modalContainer.remove();
+  });
+
+  input.addEventListener('keypress', (e) => {
+    if(e.keyCode === 13) {
+      modalContainer.remove();
+    }
   });
 };
